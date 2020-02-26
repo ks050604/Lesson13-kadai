@@ -1,22 +1,21 @@
 package validators;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-import models.Message;
+import models.Tasks;
 
-public class MessageValidator {
-    // バリデーションを実行する
-    public static List<String> validate(Message m) {
+public class TasksValidator {
+	 // バリデーションを実行する
+    public static List<String> validate(Tasks t) {
         List<String> errors = new ArrayList<String>();
 
-        String title_error = _validateTitle(m.getTitle());
+        String title_error = _validateTitle(t.getTitle());
         if(!title_error.equals("")) {
             errors.add(title_error);
         }
 
-        String content_error = _validateContent(m.getContent());
+        String content_error = _validateContent(t.getContent());
         if(!content_error.equals("")) {
             errors.add(content_error);
         }
