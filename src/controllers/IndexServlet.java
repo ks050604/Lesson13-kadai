@@ -52,7 +52,7 @@ public class IndexServlet extends HttpServlet {
                                    .getResultList();
 
         // 全件数を取得
-        long tasks_count = (long)em.createNamedQuery("getMessagesCount", Long.class)
+        long tasks_count = (long)em.createNamedQuery("getTasksCount", Long.class)
                                       .getSingleResult();
 
         em.close();
@@ -73,7 +73,7 @@ public class IndexServlet extends HttpServlet {
             request.getSession().removeAttribute("flush");
         }
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/messages/index.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasks/index.jsp");
         rd.forward(request, response);
     }
 }
